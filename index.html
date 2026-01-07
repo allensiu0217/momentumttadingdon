@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>頂尖動能投資者策略手冊</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap');
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: #0f172a; color: #f1f5f9; }
+        .card { background-color: #1e293b; border-radius: 0.75rem; border: 1px solid #334155; padding: 1.5rem; transition: transform 0.2s; }
+        .card:hover { transform: translateY(-2px); border-color: #3b82f6; }
+        .accent-blue { color: #3b82f6; }
+        .accent-red { color: #ef4444; }
+        .accent-green { color: #10b981; }
+        .status-badge { padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.875rem; font-weight: bold; }
+        .logic-step { border-left: 4px solid #3b82f6; padding-left: 1rem; margin-bottom: 1.5rem; }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+    <div class="max-w-6xl mx-auto">
+        <!-- Header -->
+        <header class="mb-10 text-center">
+            <h1 class="text-4xl font-bold mb-2">動能交易策略體系 (Momentum Strategy)</h1>
+            <p class="text-slate-400 text-lg">“獲利不需要照顧，虧損才需要你的照料。”</p>
+            <div class="mt-4 flex justify-center gap-4">
+                <span class="status-badge bg-blue-900 text-blue-200 border border-blue-700">Weinstein Stage 2</span>
+                <span class="status-badge bg-green-900 text-green-200 border border-green-700">Minervini SEPA</span>
+                <span class="status-badge bg-red-900 text-red-200 border border-red-700">Strict Stop-Loss 8%</span>
+            </div>
+        </header>
+
+        <!-- 1. 市場環境與選股清單 -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
+                <span class="bg-blue-600 w-8 h-8 flex items-center justify-center rounded-full text-sm">1</span>
+                每日/每週清單與環境評估 (Market Context)
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="card">
+                    <h3 class="text-xl font-semibold mb-4 accent-blue">大盤環境 (SPX/NDX)</h3>
+                    <ul class="space-y-3 text-slate-300">
+                        <li class="flex justify-between"><span>大盤處於 Stage 2?</span> <span class="font-bold">必須為 YES</span></li>
+                        <li class="flex justify-between"><span>股價 > 50MA > 150MA?</span> <span class="font-bold">綠燈</span></li>
+                        <li class="flex justify-between"><span>分銷日 (Distribution Days)?</span> <span class="text-yellow-400 font-bold">< 5日內</span></li>
+                        <li class="border-t border-slate-700 pt-2 text-sm italic">※ 若大盤處於 Stage 4 (空頭)，所有買入信號均無效，必須離場觀望。</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3 class="text-xl font-semibold mb-4 accent-blue">個股選股過濾 (RS 87+)</h3>
+                    <ul class="space-y-2 text-slate-300">
+                        <li class="flex items-start gap-2"><span>✅</span> <span>相對強度 (RS) 評分 > 87</span></li>
+                        <li class="flex items-start gap-2"><span>✅</span> <span>50MA 趨勢向上且在 150MA 之上</span></li>
+                        <li class="flex items-start gap-2"><span>✅</span> <span>股價位於 52 週高點的 25% 以內</span></li>
+                        <li class="flex items-start gap-2"><span>✅</span> <span>成交量在整固期必須明顯萎縮 (VCP)</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. 買入決策樹 -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
+                <span class="bg-blue-600 w-8 h-8 flex items-center justify-center rounded-full text-sm">2</span>
+                買入決策樹 (Entry Logic)
+            </h2>
+            <div class="card bg-slate-800 border-none">
+                <div class="logic-step">
+                    <p class="font-bold text-lg mb-1">Step 1: 形態辨識</p>
+                    <p class="text-slate-400 italic">尋找：杯柄型 (Handle)、雙底、或 3-4 次收縮的 VCP 型態。</p>
+                </div>
+                <div class="logic-step">
+                    <p class="font-bold text-lg mb-1">Step 2: 定位樞紐點 (Pivot Point)</p>
+                    <p class="text-slate-400 italic">最近 5-10 日波動率是否收縮至 8% 以內？(理想 3-4%)。</p>
+                </div>
+                <div class="logic-step">
+                    <p class="font-bold text-lg mb-1">Step 3: 成交量確認</p>
+                    <p class="text-slate-400 italic">當日成交量是否預計比 50 日均量高出 50%？</p>
+                </div>
+                <div class="logic-step border-none bg-blue-900/30 p-4 rounded-lg">
+                    <p class="font-bold text-green-400">🔥 觸發買入點：帶量突破 Pivot Point</p>
+                    <p class="text-sm">第一筆進場注碼：5% - 7% 總資產。不要一次性梭哈。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. 持倉監控與金字塔加注 -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
+                <span class="bg-blue-600 w-8 h-8 flex items-center justify-center rounded-full text-sm">3</span>
+                持倉監控與加注 (Pyramiding)
+            </h2>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-slate-700 text-slate-200">
+                            <th class="p-3 border border-slate-600">階段</th>
+                            <th class="p-3 border border-slate-600">動作</th>
+                            <th class="p-3 border border-slate-600">條件</th>
+                            <th class="p-3 border border-slate-600">注碼佔比</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-slate-300">
+                        <tr>
+                            <td class="p-3 border border-slate-600">初始進場</td>
+                            <td class="p-3 border border-slate-600">建立試探頭寸</td>
+                            <td class="p-3 border border-slate-600">帶量突破第一樞紐點</td>
+                            <td class="p-3 border border-slate-600">5-7%</td>
+                        </tr>
+                        <tr class="bg-slate-800/50">
+                            <td class="p-3 border border-slate-600">第一加注</td>
+                            <td class="p-3 border border-slate-600">金字塔加注</td>
+                            <td class="p-3 border border-slate-600">盈利中且突破第二個基礎 (Base)</td>
+                            <td class="p-3 border border-slate-600">+3-5%</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 border border-slate-600">後續追蹤</td>
+                            <td class="p-3 border border-slate-600">持有觀望</td>
+                            <td class="p-3 border border-slate-600">股價沿著 10/20MA 上行</td>
+                            <td class="p-3 border border-slate-600">持平</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="mt-4 text-sm text-red-400">※ 禁止事項：嚴禁向下攤平 (Averaging Down)，只在盈利且趨勢確認時加注。</p>
+        </section>
+
+        <!-- 4. 出場決策矩陣 -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
+                <span class="bg-blue-600 w-8 h-8 flex items-center justify-center rounded-full text-sm">4</span>
+                出場決策矩陣 (Exit Matrix)
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="card border-red-900/50">
+                    <h3 class="font-bold accent-red mb-2">絕對止損 (SL)</h3>
+                    <p class="text-sm mb-2 text-slate-300">無條件執行 8% 絕對止損。如果買入理由消失或破位，立即斬倉。</p>
+                    <div class="text-xs p-2 bg-red-900/20 text-red-300">Max Loss: -8%</div>
+                </div>
+                <div class="card border-yellow-900/50">
+                    <h3 class="font-bold text-yellow-500 mb-2">保本/追蹤止損 (TSO)</h3>
+                    <p class="text-sm mb-2 text-slate-300">獲利達到 15% 時，將止損移至成本價。隨後以 50MA 或前低點追蹤。</p>
+                    <div class="text-xs p-2 bg-yellow-900/20 text-yellow-300">Trailing Stop Active</div>
+                </div>
+                <div class="card border-green-900/50">
+                    <h3 class="font-bold accent-green mb-2">止盈計畫 (TP)</h3>
+                    <p class="text-sm mb-2 text-slate-300">20-25% 減持一半。若符合 MVP 領導股特徵，則持有 8 週以上捕捉大浪。</p>
+                    <div class="text-xs p-2 bg-green-900/20 text-green-300">Target RR: 3:1</div>
+                </div>
+            </div>
+            <div class="card mt-4 border-orange-500/30">
+                <h3 class="font-bold text-orange-400 mb-2 font-mono">緊急警示信號 (Emergency)</h3>
+                <ul class="text-xs grid grid-cols-2 gap-2 text-slate-400">
+                    <li>● 消耗性缺口 (Exhaustion Gap)</li>
+                    <li>● 跌破 50MA 且無法快速收回</li>
+                    <li>● 拋物線噴發 (Climax Run)</li>
+                    <li>● 成交量異常放大但股價滯漲</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 5. 心理與紀律守則 -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-6 flex items-center gap-2 text-purple-400">
+                ⭐ 交易靈魂：紀律守則
+            </h2>
+            <div class="bg-slate-800 p-6 rounded-xl space-y-4">
+                <blockquote class="border-l-4 border-purple-500 pl-4 italic text-slate-300">
+                    「如果你不能為一個小的虧損買單，你最終會為所有虧損的母親買單。」
+                </blockquote>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="p-4 bg-slate-900 rounded-lg">
+                        <p class="font-bold mb-2">機器人式執行</p>
+                        <p class="text-sm text-slate-400">不要物化金錢，帳戶餘額只是數字。專注於正確的動作，結果會隨之而來。</p>
+                    </div>
+                    <div class="p-4 bg-slate-900 rounded-lg">
+                        <p class="font-bold mb-2">風險控制核心</p>
+                        <p class="text-sm text-slate-400">單筆交易風險 (Risk per trade) 嚴禁超過總資產的 1.25%。MDD 達 8% 立即停止交易。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer / Signature -->
+        <footer class="text-center text-slate-500 text-sm mt-12 pb-8 border-t border-slate-800 pt-8">
+            <p>由頂尖動能交易助手生成 - 始終保持警惕，市場只獎勵有準備的人。</p>
+        </footer>
+    </div>
+</body>
+</html>
